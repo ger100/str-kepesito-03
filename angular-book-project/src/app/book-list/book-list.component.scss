@@ -1,0 +1,34 @@
+@import "mixin";
+.table-section {
+
+  #get-button {
+    @include book-background-style;
+    @include set-text-style;
+  }
+
+  th {
+    @include book-background-style;
+    @include set-text-style;
+  }
+
+  td {
+    @include set-text-style;
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  tr {
+    background-color: rgb(226, 78, 27);
+  }
+  th {
+    background-color: rgb(226, 78, 27);
+  }
+
+  .delete-button{
+    @include delete-style;
+  }
+}

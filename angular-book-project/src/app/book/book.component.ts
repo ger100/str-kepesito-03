@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
+import { Book } from '../model/book';
+
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
@@ -9,6 +11,7 @@ import { FormGroup } from '@angular/forms';
 export class BookComponent implements OnInit {
 
   bookForm: FormGroup;
+  book: Book = new Book();
 
   constructor() { }
 

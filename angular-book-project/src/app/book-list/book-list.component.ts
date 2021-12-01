@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HttpService } from '../service/http.service';
+import { Book } from '../model/book';
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
@@ -9,13 +13,23 @@ export class BookListComponent implements OnInit {
 
   bookList =[];
 
-  constructor() { }
+  constructor(private httpService: HttpService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {  }
+
+  getBookList(): void {
+    this.httpService.getBookList().subscribe({
+      next: data => {this.bookList = data},
+      error: err => console.log(err)
+    });
   }
 
-  getBookList(){}
-
-  readBook(bookObj){}
+  readBook(bookObj: Book): void {
+    console.log('Reading Book ' + bookObj.id + ' ...')
+    this.httpService.readABook(bookObj.id, bookObj).subscribe({
+      next: bookObj => console.log(' done.'),
+      error: err => console.log(err)
+    });
+  }
 
 }
