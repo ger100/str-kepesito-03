@@ -1,0 +1,25 @@
+.card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 3% auto;
+  padding: 1rem;
+  width: 650px;
+}
+
+
+.h3{
+  text-align: center;
+  color:rgb(226, 78, 27);
+}
+
+
+.img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 3% auto;
+  width: 90%;
+}
